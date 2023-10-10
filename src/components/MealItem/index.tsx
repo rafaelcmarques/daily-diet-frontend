@@ -1,21 +1,24 @@
-import { Container,Text, Hour, Status, StatusProps } from "./styles"
-import {PressableProps} from 'react-native'
+import { Container, Text, Hour, Status, StatusProps } from "./styles"
+import { PressableProps } from 'react-native'
 
 type MealItemProps = PressableProps & {
-  title: string
-  status: StatusProps['type']
+  data: {
+    title: string,
+    status: StatusProps['type'],
+    hour: string
+  }
 }
 
-export function MealItem ({title, status}:MealItemProps) {
+export function MealItem({ data }: MealItemProps) {
   return (
     <Container>
       <Hour>
-        20:00 |
+        {data.hour}|
       </Hour>
       <Text>
-        {title}
+        {data.title}
       </Text>
-      <Status type={status}/>
+      <Status type={data.status} />
     </Container>
   )
 }

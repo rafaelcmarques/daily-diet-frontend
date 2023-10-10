@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export type StatusProps = {
-  type:  'primary' | 'secondery'
+  type:  'onDiet' | 'outDiet'
 }
 
 export const Container = styled.Pressable`
@@ -30,8 +30,8 @@ export const Hour = styled.Text`
 export const Status = styled.View<StatusProps>`
   height: 14px;
   width: 14px;
+  border-radius: 7px;
   background-color: ${({ theme, type }) =>
-    type === 'primary' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
-  border-radius: 100%;
+    type === 'onDiet' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
   margin-left: auto;
 `

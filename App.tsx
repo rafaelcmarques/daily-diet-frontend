@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, NunitoSans_400Regular, NunitoSans_700Bold } from '@expo-google-fonts/nunito-sans';
 
 import theme from "./src/theme";
-import { Home } from "./src/pages/home"
+import { Statistic } from "./src/pages/statistic"
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,7 +20,7 @@ export default function App() {
           backgroundColor={'transparent'}
           translucent
         />
-        {fontsLoaded ? <Home /> : <Loading />}
+        {fontsLoaded ? <Statistic /> : <Loading />}
       </ThemeProvider>
     </SafeAreaProvider>
   )

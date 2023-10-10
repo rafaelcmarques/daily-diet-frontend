@@ -20,7 +20,7 @@ export const UserProfile = styled.View`
   border: 2px solid black;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 20px;
 `
 export const UserProfilePlaceholder = styled(User).attrs(({theme})=>({
   size: 35,
