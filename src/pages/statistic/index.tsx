@@ -1,10 +1,13 @@
 import { Container, Details, Header, Title, CardWrapper, CardContainer, HeaderNumber, HeaderDescription } from "./style";
 import { StatisticCard } from "../../components/StatisticCard";
+import { BackButton } from "../../components/BackButton";
+
 
 
 export function Statistic() {
   return (
-    <Container>
+    <Container types="green">
+      <BackButton types="neutral"/>
       <Header>
         <HeaderNumber>
           30,21%

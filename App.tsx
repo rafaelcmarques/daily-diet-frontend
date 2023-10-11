@@ -5,10 +5,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, NunitoSans_400Regular, NunitoSans_700Bold } from '@expo-google-fonts/nunito-sans';
 
 import theme from "./src/theme";
-import { Statistic } from "./src/pages/statistic"
+import { NewMeal } from "./src/pages/newMeal"
+import { Home } from "./src/pages/home"
+
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded] = useFonts({ 
     NunitoSans_400Regular, NunitoSans_700Bold
   })
 
@@ -20,7 +22,7 @@ export default function App() {
           backgroundColor={'transparent'}
           translucent
         />
-        {fontsLoaded ? <Statistic /> : <Loading />}
+        {fontsLoaded ? <NewMeal /> : <Loading />}
       </ThemeProvider>
     </SafeAreaProvider>
   )

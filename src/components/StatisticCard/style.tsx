@@ -5,7 +5,6 @@ export type CardProps = {
 }
 
 export const Container = styled.View<CardProps>`
-  width: 100%;
   align-items: center;
   padding: 25px;
   border-radius: 8px;

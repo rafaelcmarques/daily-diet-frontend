@@ -1,18 +1,22 @@
 import styled from "styled-components/native";
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+type StatisticPageStyleProps = {
+  types: 'green' | 'red'
+}
 
-export const Container = styled(SafeAreaView)`
+export const Container = styled(SafeAreaView)<StatisticPageStyleProps>`
   display: flex;
-  background-color: ${({theme})=> theme.COLORS.GREEN_LIGHT};
-  flex:1;
+  background-color: ${({ theme, types }) => 
+    types === 'green' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT 
+  };
+  flex: 1;
 `
 
 export const Header = styled.View`
   display: flex;
   align-items: center;
-  padding-top: 24px;
-  height: 150px;
+  height: 130px;
 `
 export const HeaderNumber = styled.Text`
   font-size: ${({theme})=> theme.FONT_SIZE.XXL}px;
@@ -36,7 +40,7 @@ export const Details = styled.View`
 export const Title = styled.Text`
   font-size: ${({theme})=> theme.FONT_SIZE.LG}px;
   font-family: ${({theme})=> theme.FONT_FAMILY.BOLD};
-  align-self: center;
+
 `
 export const CardWrapper = styled.View`
   display: flex;

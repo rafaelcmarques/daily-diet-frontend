@@ -9,7 +9,7 @@ export const Container = styled.TouchableOpacity<PercentageProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 24px;
+  margin: 24px 0;
 
   border-radius: 8px;
   background-color: ${({ theme, type }) =>

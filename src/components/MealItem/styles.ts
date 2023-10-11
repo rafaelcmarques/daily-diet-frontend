@@ -11,7 +11,7 @@ export const Container = styled.Pressable`
   padding: 0 10px;
 
   border-radius: 8px;
-  margin: 5px 24px 0 24px;
+  margin: 5px 0 0 0;
   height: 50px;
   border: 1px solid ${({theme})=> theme.COLORS.GRAY_500};
 `

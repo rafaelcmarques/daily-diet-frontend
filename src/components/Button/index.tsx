@@ -1,21 +1,21 @@
-import { ReactElement, ReactNode } from "react"
-import { Container, Text } from "./styles"
+import { ReactElement, } from "react"
+import { Container, Text, ButtonStyleProps } from "./styles"
 import { TouchableOpacityProps } from 'react-native'
 
 
 type ButtonProps = TouchableOpacityProps & {
   title: string
   icon?: ReactElement
+  type?: ButtonStyleProps['type']
 }
 
-export function Button({title, icon,  ...rest}:ButtonProps){
+export function Button({title, icon, type = 'dark',  ...rest}:ButtonProps){
   return (
-    <Container {...rest}>
+    <Container type={type} {...rest}>
       {icon && 
       icon
       }
-      
-        <Text>
+        <Text type={type}>
           {title}
         </Text>
     </Container>
