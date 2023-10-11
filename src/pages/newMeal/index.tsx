@@ -1,9 +1,13 @@
-import { Container, Header, Main, Form, Wrapper, Text, ButtonWrapper } from "./styles"
+import { useState } from "react"
+
+import { Container, Header, Main, Form, Wrapper, Text, ChoiceButton, Status } from "./styles"
 import { BackButton } from "../../components/BackButton"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 
 export function NewMeal () {
+  const [isSelected, setIsSelected] = useState<string>()
+
   return (
     <Container>
       <Header>
@@ -25,8 +29,15 @@ export function NewMeal () {
           </Text>
 
           <Wrapper style={{marginBottom: 'auto'}}>
-            <Button title="Sim" type="light"/>
-            <Button title="Não" type="light"/>
+            <ChoiceButton types="green" isSelected={isSelected === 'onDiet'} onPress={()=> setIsSelected('onDiet')}>
+              <Status types="green"/>
+              <Text>Sim</Text>
+            </ChoiceButton>
+
+            <ChoiceButton types="red" isSelected={isSelected === 'outDiet'} onPress={()=> setIsSelected('outDiet')} >
+              <Status types="red"/>
+              <Text>Não</Text>
+            </ChoiceButton>
           </Wrapper>
 
           
