@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { User } from "phosphor-react-native";
+import styled from 'styled-components/native'
+import { User } from 'phosphor-react-native'
 
 export const Container = styled.View`
   display: flex;
@@ -10,8 +10,8 @@ export const Container = styled.View`
 `
 
 export const Logo = styled.Image`
-width: 82px;
-height: 31px;
+  width: 82px;
+  height: 31px;
 `
 export const UserProfile = styled.View`
   display: flex;
@@ -22,8 +22,7 @@ export const UserProfile = styled.View`
   height: 40px;
   border-radius: 20px;
 `
-export const UserProfilePlaceholder = styled(User).attrs(({theme})=>({
+export const UserProfilePlaceholder = styled(User).attrs(({ theme }) => ({
   size: 35,
-  color: theme.COLORS.GRAY_100
-}))
-``
+  color: theme.COLORS.GRAY_100,
+}))``

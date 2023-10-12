@@ -18,17 +18,16 @@ export default {
     GRAY_600: '#EFF0F0',
     GRAY_700: '#FAFAFA',
     GRAY_800: '#FFFFFF',
-
   },
   FONT_FAMILY: {
-    REGULAR:  'NunitoSans_400Regular',
-    BOLD: 'NunitoSans_700Bold'
+    REGULAR: 'NunitoSans_400Regular',
+    BOLD: 'NunitoSans_700Bold',
   },
   FONT_SIZE: {
     SM: 14,
     MD: 16,
     LG: 18,
     XL: 24,
-    XXL: 32
-  }
-};
+    XXL: 32,
+  },
+}

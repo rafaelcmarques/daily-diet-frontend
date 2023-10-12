@@ -1,20 +1,21 @@
-import { StatusBar } from "react-native";
-import { Loading } from "./src/components/Loading";
-import { ThemeProvider } from "styled-components/native";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useFonts, NunitoSans_400Regular, NunitoSans_700Bold } from '@expo-google-fonts/nunito-sans';
+import { StatusBar } from 'react-native'
+import { Loading } from './src/components/Loading'
+import { ThemeProvider } from 'styled-components/native'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import {
+  useFonts,
+  NunitoSans_400Regular,
+  NunitoSans_700Bold,
+} from '@expo-google-fonts/nunito-sans'
 
-import theme from "./src/theme";
-import { Home } from "./src/pages/home"
-import { Statistic } from "./src/pages/statistic";
-import { NewMeal } from "./src/pages/newMeal"
-import { Feedback } from "./src/pages/feedback"
+import theme from './src/theme'
 
-
+import { EditMeal } from './src/pages/editMeal'
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ 
-    NunitoSans_400Regular, NunitoSans_700Bold
+  const [fontsLoaded] = useFonts({
+    NunitoSans_400Regular,
+    NunitoSans_700Bold,
   })
 
   return (
@@ -25,7 +26,7 @@ export default function App() {
           backgroundColor={'transparent'}
           translucent
         />
-        {fontsLoaded ? <Feedback /> : <Loading />}
+        {fontsLoaded ? <EditMeal /> : <Loading />}
       </ThemeProvider>
     </SafeAreaProvider>
   )

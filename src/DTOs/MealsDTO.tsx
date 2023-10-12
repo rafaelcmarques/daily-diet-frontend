@@ -1,6 +1,6 @@
-import { MealDTO } from "./MealDTO"
+import { MealDTO } from './MealDTO'
 
 export type MealsDTO = {
-  title: string,
-  data : MealDTO[]
+  title: string
+  data: MealDTO[]
 }

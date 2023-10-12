@@ -1,26 +1,27 @@
-import { Container, Details, Header, Title, CardWrapper, CardContainer, HeaderNumber, HeaderDescription } from "./style";
-import { StatisticCard } from "../../components/StatisticCard";
-import { BackButton } from "../../components/BackButton";
-
-
+import {
+  Container,
+  Details,
+  Header,
+  Title,
+  CardWrapper,
+  CardContainer,
+  HeaderNumber,
+  HeaderDescription,
+} from './style'
+import { StatisticCard } from '../../components/StatisticCard'
+import { BackButton } from '../../components/BackButton'
 
 export function Statistic() {
   return (
     <Container types="green">
       <Header>
-      <BackButton types="neutral"/>
-        <HeaderNumber>
-          30,21%
-        </HeaderNumber>
-        <HeaderDescription>
-          das refeições dentro da dieta
-        </HeaderDescription>
+        <BackButton types="neutral" />
+        <HeaderNumber>30,21%</HeaderNumber>
+        <HeaderDescription>das refeições dentro da dieta</HeaderDescription>
       </Header>
 
       <Details>
-        <Title>
-          Estatísticas gerais
-        </Title>
+        <Title>Estatísticas gerais</Title>
         <StatisticCard
           number="4"
           description="melhor sequência de pratos dentro da dieta"
@@ -49,7 +50,6 @@ export function Statistic() {
             />
           </CardContainer>
         </CardWrapper>
-
       </Details>
     </Container>
   )

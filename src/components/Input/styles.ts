@@ -1,16 +1,14 @@
-import styled, {css} from "styled-components/native";
-import { TextInput } from "react-native";
+import styled, { css } from 'styled-components/native'
+import { TextInput } from 'react-native'
 
-
-export const Container = styled.View `
+export const Container = styled.View`
   flex: 1;
   gap: 4px;
   min-height: 85px;
   max-height: 85px;
 `
 export const InputContainer = styled(TextInput)`
-  
-  ${({theme})=> css`  
+  ${({ theme }) => css`
     background-color: ${theme.COLORS.GRAY_700};
     color: ${theme.COLORS.GRAY_100};
     font-family: ${theme.FONT_FAMILY.REGULAR};
@@ -22,7 +20,7 @@ export const InputContainer = styled(TextInput)`
 `
 
 export const TitleInput = styled.Text`
-  font-size: ${({theme})=> theme.FONT_SIZE.SM}px;
-  font-family: ${({theme})=> theme.FONT_FAMILY.BOLD};
+  font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
   text-transform: capitalize;
 `
