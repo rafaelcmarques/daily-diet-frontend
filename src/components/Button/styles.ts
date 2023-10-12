@@ -6,6 +6,7 @@ export type ButtonStyleProps = {
 
 export const Container = styled.TouchableOpacity<ButtonStyleProps>`
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;

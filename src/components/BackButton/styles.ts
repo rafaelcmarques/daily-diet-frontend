@@ -8,7 +8,7 @@ export type ButtonBackStyleProps = {
 
 export const Container = styled(Pressable)`
   display: flex;
-  flex:1;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   padding: 0 24px;

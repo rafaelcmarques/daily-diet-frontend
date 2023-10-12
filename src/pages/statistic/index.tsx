@@ -7,8 +7,8 @@ import { BackButton } from "../../components/BackButton";
 export function Statistic() {
   return (
     <Container types="green">
-      <BackButton types="neutral"/>
       <Header>
+      <BackButton types="neutral"/>
         <HeaderNumber>
           30,21%
         </HeaderNumber>

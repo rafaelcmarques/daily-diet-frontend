@@ -14,7 +14,7 @@ export const Header = styled.View`
   height: 120px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  
 ` 
 
 export const Main = styled.View`
