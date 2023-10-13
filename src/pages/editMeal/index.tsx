@@ -11,10 +11,12 @@ import {
   Status,
   StatusPropsStyle,
 } from './styles'
+
 import { useTheme } from 'styled-components'
 
 import { BackButton } from '../../components/BackButton'
 import { Button } from '../../components/Button'
+import { Modal } from '../../components/Modal'
 import { PencilSimpleLine, Trash } from 'phosphor-react-native'
 
 type EditMealProps = {
@@ -23,10 +25,22 @@ type EditMealProps = {
 
 export function EditMeal() {
   const [type, setType] = useState<EditMealProps['types']>('outDiet')
+  const [showModal, setShowModal] = useState(false)
+
+  function handleDeleteMeal() {
+    setShowModal(true)
+  }
+
+  function handleCancel() {
+    setShowModal(false)
+  }
+
   const theme = useTheme()
 
   return (
     <Container types={type}>
+      {showModal && <Modal cancel={handleCancel} />}
+
       <Header>
         <BackButton types="neutral" title="Editar refeição" />
       </Header>
@@ -57,6 +71,7 @@ export function EditMeal() {
           title="Excluir refeição"
           type="light"
           icon={<Trash color={theme.COLORS.GRAY_100} />}
+          onPress={() => handleDeleteMeal()}
         />
       </Main>
     </Container>

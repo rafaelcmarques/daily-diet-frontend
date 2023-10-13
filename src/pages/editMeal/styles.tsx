@@ -8,6 +8,7 @@ export const Container = styled.View<StatusPropsStyle>`
   flex: 1;
   background-color: ${({ theme, types }) =>
     types === 'onDiet' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
+  position: relative;
 `
 
 export const Header = styled.View`

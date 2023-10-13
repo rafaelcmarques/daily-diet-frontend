@@ -19,7 +19,7 @@ export const Container = styled.TouchableOpacity<ButtonStyleProps>`
     type === 'dark' ? theme.COLORS.GRAY_200 : theme.COLORS.GRAY_700};
   border: 2px solid;
   border-color: ${({ theme, type }) =>
-    type === 'dark' ? 'none' : theme.COLORS.GRAY_300};
+    type === 'dark' ? theme.COLORS.GRAY_200 : theme.COLORS.GRAY_300};
   border-radius: 8px;
 `
 
