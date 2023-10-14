@@ -9,10 +9,10 @@ type MealItemProps = PressableProps & {
   }
 }
 
-export function MealItem({ data }: MealItemProps) {
+export function MealItem({ data, ...rest }: MealItemProps) {
   return (
-    <Container>
-      <Hour>{data.hour}|</Hour>
+    <Container {...rest}>
+      <Hour>{data.hour} |</Hour>
       <Text>{data.title}</Text>
       <Status type={data.status} />
     </Container>

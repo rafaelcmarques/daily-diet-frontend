@@ -4,17 +4,21 @@ import { ThemeProvider } from 'styled-components/native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import {
   useFonts,
+  // eslint-disable-next-line camelcase
   NunitoSans_400Regular,
+  // eslint-disable-next-line camelcase
   NunitoSans_700Bold,
 } from '@expo-google-fonts/nunito-sans'
 
-import theme from './src/theme'
+import { Routes } from './src/routes'
 
-import { EditMeal } from './src/pages/editMeal'
+import theme from './src/theme'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
+    // eslint-disable-next-line camelcase
     NunitoSans_400Regular,
+    // eslint-disable-next-line camelcase
     NunitoSans_700Bold,
   })
 
@@ -26,7 +30,7 @@ export default function App() {
           backgroundColor={'transparent'}
           translucent
         />
-        {fontsLoaded ? <EditMeal /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </ThemeProvider>
     </SafeAreaProvider>
   )

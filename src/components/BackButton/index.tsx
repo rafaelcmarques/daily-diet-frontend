@@ -1,5 +1,6 @@
-import { Container, Icon, ButtonBackStyleProps, PageTitle } from './styles'
 import { PressableProps } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Container, Icon, ButtonBackStyleProps, PageTitle } from './styles'
 
 type BackButtonProps = PressableProps & {
   types?: ButtonBackStyleProps['types']
@@ -11,8 +12,12 @@ export function BackButton({
   title,
   ...rest
 }: BackButtonProps) {
+  const navigation = useNavigation()
+  function handleBack() {
+    navigation.goBack()
+  }
   return (
-    <Container {...rest}>
+    <Container {...rest} onPress={() => handleBack()}>
       <Icon types={types} />
       {title && <PageTitle>{title}</PageTitle>}
     </Container>

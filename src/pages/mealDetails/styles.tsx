@@ -35,6 +35,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_100};
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  text-transform: capitalize;
 `
 export const Subtitle = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_100};

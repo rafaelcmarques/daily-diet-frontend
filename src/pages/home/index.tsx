@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 
 import { Container, Text, TextSection } from './styles'
@@ -10,7 +11,9 @@ import { Button } from '../../components/Button'
 
 import { Plus } from 'phosphor-react-native'
 import { SectionList } from 'react-native'
+
 import { MealsDTO } from '../../DTOs/MealsDTO'
+import { MealDTO } from '../../DTOs/MealDTO'
 
 export function Home() {
   const [refeicoes, setRefeicoes] = useState<MealsDTO[]>([
@@ -40,17 +43,37 @@ export function Home() {
     },
   ])
 
+  const navigation = useNavigation()
+
+  function handleMealDetails(meal: MealDTO) {
+    navigation.navigate('mealDetails', { meal })
+  }
+
+  function handleStatistic() {
+    navigation.navigate('statistic')
+  }
+
+  function handleNewMeal() {
+    navigation.navigate('newMeal')
+  }
+
   return (
     <Container>
       <Heading />
-      <PercentageView type="primary" />
+      <PercentageView type="primary" onPress={() => handleStatistic()} />
       <Text>Refeições</Text>
-      <Button title="Nova refeição" icon={<Plus color="white" />} />
+      <Button
+        title="Nova refeição"
+        onPress={() => handleNewMeal()}
+        icon={<Plus color="white" />}
+      />
 
       <SectionList
         sections={refeicoes}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <MealItem data={item} />}
+        renderItem={({ item }) => (
+          <MealItem data={item} onPress={() => handleMealDetails(item)} />
+        )}
         renderSectionHeader={({ section: { title } }) => (
           <TextSection>{title}</TextSection>
         )}

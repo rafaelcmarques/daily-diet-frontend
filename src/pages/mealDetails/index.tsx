@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useRoute } from '@react-navigation/native'
+import { MealDTO } from '../../DTOs/MealDTO'
 
 import {
   Container,
@@ -9,7 +11,6 @@ import {
   Subtitle,
   StatusIcon,
   Status,
-  StatusPropsStyle,
 } from './styles'
 
 import { useTheme } from 'styled-components'
@@ -19,12 +20,14 @@ import { Button } from '../../components/Button'
 import { Modal } from '../../components/Modal'
 import { PencilSimpleLine, Trash } from 'phosphor-react-native'
 
-type EditMealProps = {
-  types: StatusPropsStyle['types']
+type RouteParams = {
+  meal: MealDTO
 }
 
-export function EditMeal() {
-  const [type, setType] = useState<EditMealProps['types']>('outDiet')
+export function MealDetails() {
+  const route = useRoute()
+  const { meal } = route.params as RouteParams
+
   const [showModal, setShowModal] = useState(false)
 
   function handleDeleteMeal() {
@@ -38,28 +41,28 @@ export function EditMeal() {
   const theme = useTheme()
 
   return (
-    <Container types={type}>
+    <Container types={meal.status}>
       {showModal && <Modal cancel={handleCancel} />}
 
       <Header>
         <BackButton types="neutral" title="Editar refeição" />
       </Header>
       <Main>
-        <Title>Sanduíche</Title>
+        <Title>{meal.title}</Title>
         <Text>
           Sanduíche de pão integral com atum e salada de alface e tomate
         </Text>
 
         <Subtitle>Data e hora</Subtitle>
         <Text>12/08/2022 às 16:00</Text>
-        {type === 'onDiet' ? (
+        {meal.status === 'onDiet' ? (
           <Status types="onDiet">
-            <StatusIcon types={type} />
+            <StatusIcon types={meal.status} />
             <Text> dentro da dieta</Text>
           </Status>
         ) : (
           <Status types="outDiet">
-            <StatusIcon types={type} />
+            <StatusIcon types={meal.status} />
             <Text> fora da dieta</Text>
           </Status>
         )}
