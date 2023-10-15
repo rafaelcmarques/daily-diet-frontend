@@ -6,7 +6,6 @@ type StatisticPageStyleProps = {
 }
 
 export const Container = styled(SafeAreaView)<StatisticPageStyleProps>`
-  display: flex;
   background-color: ${({ theme, types }) =>
     types === 'green' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
   flex: 1;
@@ -16,7 +15,6 @@ export const Header = styled.View`
   display: flex;
   align-items: center;
   height: 130px;
-  margin-top: 24px;
 `
 export const HeaderNumber = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.XXL}px;

@@ -15,7 +15,7 @@ export function Statistic() {
   return (
     <Container types="green">
       <Header>
-        <BackButton types="neutral" />
+        <BackButton types="green" />
         <HeaderNumber>30,21%</HeaderNumber>
         <HeaderDescription>das refeições dentro da dieta</HeaderDescription>
       </Header>

@@ -12,16 +12,17 @@ export const Container = styled(Pressable)`
   flex-direction: row;
   align-items: center;
   padding: 0 24px;
+  margin-top: 20px;
 `
 
 export const Icon = styled(ArrowLeft).attrs<ButtonBackStyleProps>(
   ({ theme, types }) => ({
     size: 24,
     color:
-      types == 'green'
-        ? theme.COLORS.GREEN_LIGHT
-        : types == 'red'
-        ? theme.COLORS.RED_LIGHT
+      types === 'green'
+        ? theme.COLORS.GREEN_DARK
+        : types === 'red'
+        ? theme.COLORS.RED_DARK
         : theme.COLORS.GRAY_100,
   }),
 )<ButtonBackStyleProps>``
