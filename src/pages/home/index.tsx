@@ -77,16 +77,17 @@ export function Home() {
         renderSectionHeader={({ section: { title } }) => (
           <TextSection>{title}</TextSection>
         )}
+        stickySectionHeadersEnabled={false}
         showsVerticalScrollIndicator={false}
       />
       <LinearGradient
-        colors={['transparent', 'rgb(255, 255, 255)']} // Cores do gradiente
+        colors={['rgba(255, 255, 255, 0)', 'rgb(255, 255, 255)']} // Cores do gradiente
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
           bottom: 0,
-          height: 180, // Altura do gradiente
+          height: 200, // Altura do gradiente
           pointerEvents: 'none', // Permite que o toque na tela passe através do gradiente
         }}
       />
