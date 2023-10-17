@@ -1,4 +1,7 @@
 import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+
+const SCREEN_HEIGHT = Dimensions.get('window').height
 
 type ChoicePropsButton = {
   types: 'green' | 'red'
@@ -37,8 +40,6 @@ export const Text = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
 `
-
-export const ButtonWrapper = styled.View``
 
 export const ChoiceButton = styled.Pressable<ChoicePropsButton>`
   flex: 1;
