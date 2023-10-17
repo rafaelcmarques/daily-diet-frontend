@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, KeyboardAvoidingView } from 'react-native'
 import { useForm, Controller } from 'react-hook-form'
 
 import {
@@ -40,11 +40,15 @@ export function NewMeal() {
 
   return (
     <Container>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <Header>
-          <BackButton types="neutral" title="Nova refeição" />
-        </Header>
-        <Main>
+      <Header>
+        <BackButton types="neutral" title="Nova refeição" />
+      </Header>
+      <Main>
+        <ScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1 }}
+          automaticallyAdjustKeyboardInsets={true}
+        >
           <Form>
             <Controller
               control={control}
@@ -68,6 +72,7 @@ export function NewMeal() {
               )}
               name="description"
             />
+
             <Wrapper>
               <Controller
                 control={control}
@@ -118,8 +123,8 @@ export function NewMeal() {
               onPress={handleSubmit(onSubmit)}
             />
           </Form>
-        </Main>
-      </ScrollView>
+        </ScrollView>
+      </Main>
     </Container>
   )
 }
