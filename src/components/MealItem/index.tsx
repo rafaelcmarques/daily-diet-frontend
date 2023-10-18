@@ -3,7 +3,7 @@ import { PressableProps } from 'react-native'
 
 type MealItemProps = PressableProps & {
   data: {
-    title: string
+    name: string
     status: StatusProps['type']
     hour: string
   }
@@ -13,7 +13,7 @@ export function MealItem({ data, ...rest }: MealItemProps) {
   return (
     <Container {...rest}>
       <Hour>{data.hour} |</Hour>
-      <Text>{data.title}</Text>
+      <Text>{data.name}</Text>
       <Status type={data.status} />
     </Container>
   )

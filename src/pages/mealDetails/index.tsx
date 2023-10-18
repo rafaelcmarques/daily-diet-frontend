@@ -48,13 +48,13 @@ export function MealDetails() {
         <BackButton types="neutral" title="Editar refeição" />
       </Header>
       <Main>
-        <Title>{meal.title}</Title>
-        <Text>
-          Sanduíche de pão integral com atum e salada de alface e tomate
-        </Text>
+        <Title>{meal.name}</Title>
+        <Text>{meal.description}</Text>
 
         <Subtitle>Data e hora</Subtitle>
-        <Text>12/08/2022 às 16:00</Text>
+        <Text>
+          {meal.date} às {meal.hour}
+        </Text>
         {meal.status === 'onDiet' ? (
           <Status types="onDiet">
             <StatusIcon types={meal.status} />

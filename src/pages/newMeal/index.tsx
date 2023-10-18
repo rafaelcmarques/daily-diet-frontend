@@ -1,6 +1,9 @@
-import { useState } from 'react'
-import { ScrollView, KeyboardAvoidingView } from 'react-native'
+import { useEffect, useState } from 'react'
+import { ScrollView } from 'react-native'
 import { useForm, Controller } from 'react-hook-form'
+
+import { MealDTO } from '../../DTOs/MealDTO'
+import { mealCreate } from '../../storage/mealCreate'
 
 import {
   Container,
@@ -16,27 +19,19 @@ import { BackButton } from '../../components/BackButton'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
-type FormData = {
-  name: string
-  description: string
-  date: string
-  hour: string
-  isSelected: string
-}
-
 export function NewMeal() {
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<MealDTO>()
 
-  function onSubmit(data: FormData) {
-    data.isSelected = isSelected as string
-    console.log(data)
+  async function onSubmit(data: MealDTO) {
+    data.status = isSelected as MealDTO['status']
+    await mealCreate(data)
   }
 
-  const [isSelected, setIsSelected] = useState<string>()
+  const [isSelected, setIsSelected] = useState<MealDTO['status']>()
 
   return (
     <Container>
@@ -44,11 +39,7 @@ export function NewMeal() {
         <BackButton types="neutral" title="Nova refeição" />
       </Header>
       <Main>
-        <ScrollView
-          style={{ flex: 1 }}
-          contentContainerStyle={{ flexGrow: 1 }}
-          automaticallyAdjustKeyboardInsets={true}
-        >
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
           <Form>
             <Controller
               control={control}
@@ -85,7 +76,6 @@ export function NewMeal() {
                 )}
                 name="date"
               />
-
               <Controller
                 control={control}
                 render={({ field: { onChange, value } }) => (
