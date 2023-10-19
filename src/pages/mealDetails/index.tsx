@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useRoute } from '@react-navigation/native'
+import { useRoute, useNavigation } from '@react-navigation/native'
 import { MealDTO } from '../../DTOs/MealDTO'
-
+import { mealRemove } from '../../storage/mealRemove'
 import {
   Container,
   Header,
@@ -26,6 +26,7 @@ type RouteParams = {
 
 export function MealDetails() {
   const route = useRoute()
+  const navigation = useNavigation()
   const { meal } = route.params as RouteParams
 
   const [showModal, setShowModal] = useState(false)
@@ -38,11 +39,22 @@ export function MealDetails() {
     setShowModal(false)
   }
 
+  async function handleConfirm(deletedMeal: MealDTO) {
+    await mealRemove(deletedMeal)
+    navigation.goBack()
+  }
+
   const theme = useTheme()
 
   return (
     <Container types={meal.status}>
-      {showModal && <Modal cancel={handleCancel} />}
+      {showModal && (
+        <Modal
+          cancel={handleCancel}
+          confirm={() => handleConfirm(meal)}
+          meal={meal}
+        />
+      )}
 
       <Header>
         <BackButton types="neutral" title="Editar refeição" />

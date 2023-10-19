@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
 import { useForm, Controller } from 'react-hook-form'
 
 import { MealDTO } from '../../DTOs/MealDTO'
@@ -26,12 +28,14 @@ export function NewMeal() {
     formState: { errors },
   } = useForm<MealDTO>()
 
+  const [isSelected, setIsSelected] = useState<MealDTO['status']>()
+  const navigation = useNavigation()
+
   async function onSubmit(data: MealDTO) {
     data.status = isSelected as MealDTO['status']
     await mealCreate(data)
+    navigation.navigate('home')
   }
-
-  const [isSelected, setIsSelected] = useState<MealDTO['status']>()
 
   return (
     <Container>

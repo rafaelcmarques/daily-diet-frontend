@@ -4,7 +4,6 @@ import { MEALS_COLLECTION } from './storageConfig'
 
 export async function mealsGetAll() {
   const storage = await AsyncStorage.getItem(MEALS_COLLECTION)
-  console.log(storage)
   const meals: MealsDTO[] = storage ? JSON.parse(storage) : []
   return meals
 }

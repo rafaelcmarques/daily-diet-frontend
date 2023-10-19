@@ -1,7 +1,9 @@
 import { StatusBar } from 'react-native'
+import Toast from 'react-native-toast-message'
 import { Loading } from './src/components/Loading'
 import { ThemeProvider } from 'styled-components/native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+
 import {
   useFonts,
   // eslint-disable-next-line camelcase
@@ -31,6 +33,7 @@ export default function App() {
           translucent
         />
         {fontsLoaded ? <Routes /> : <Loading />}
+        <Toast />
       </ThemeProvider>
     </SafeAreaProvider>
   )
