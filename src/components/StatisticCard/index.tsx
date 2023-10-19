@@ -1,7 +1,7 @@
 import { Container, CardNumber, CardProps, Description } from './style'
 
 type StastiticCardProps = {
-  number: string
+  number: number
   description: string
   type: CardProps['types']
 }

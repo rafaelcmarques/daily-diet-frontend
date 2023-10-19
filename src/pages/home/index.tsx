@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from 'react'
-import { useFocusEffect, useNavigation } from '@react-navigation/native'
+import { SectionList } from 'react-native'
+import { useState, useCallback } from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useFocusEffect, useNavigation } from '@react-navigation/native'
 
 import { Container, Text, TextSection } from './styles'
 
@@ -10,19 +11,25 @@ import { Heading } from '../../components/Heading'
 import { Button } from '../../components/Button'
 
 import { Plus } from 'phosphor-react-native'
-import { SectionList } from 'react-native'
 
 import { MealsDTO } from '../../DTOs/MealsDTO'
 import { MealDTO } from '../../DTOs/MealDTO'
-
 import { mealsGetAll } from '../../storage/mealGetAll'
+import { mealsGetStatistics } from '../../storage/mealsGetStatistic'
 
 export function Home() {
   const [refeicoes, setRefeicoes] = useState<MealsDTO[]>([])
+  const [mealStatistic, setMealStatistic] = useState('')
+  const CARD_TYPE = parseFloat(mealStatistic) > 49.99 ? 'primary' : 'secondery'
 
   async function fetchMeals() {
     const data = await mealsGetAll()
     setRefeicoes(data)
+  }
+
+  async function fetchStatistics() {
+    const { percentage } = await mealsGetStatistics()
+    setMealStatistic(percentage)
   }
 
   const navigation = useNavigation()
@@ -42,13 +49,18 @@ export function Home() {
   useFocusEffect(
     useCallback(() => {
       fetchMeals()
+      fetchStatistics()
     }, []),
   )
 
   return (
     <Container>
       <Heading />
-      <PercentageView type="primary" onPress={() => handleStatistic()} />
+      <PercentageView
+        value={mealStatistic}
+        type={CARD_TYPE}
+        onPress={() => handleStatistic()}
+      />
       <Text>Refeições</Text>
       <Button
         title="Nova refeição"
