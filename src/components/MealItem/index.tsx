@@ -13,7 +13,7 @@ export function MealItem({ data, ...rest }: MealItemProps) {
   return (
     <Container {...rest}>
       <Hour>{data.hour} |</Hour>
-      <Text>{data.name}</Text>
+      <Text numberOfLines={1}>{data.name}</Text>
       <Status type={data.status} />
     </Container>
   )

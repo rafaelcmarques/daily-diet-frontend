@@ -19,7 +19,8 @@ export const Text = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_300};
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-  margin-left: 5px;
+  margin: 0 5px;
+  flex: 1;
 `
 export const Hour = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_100};
