@@ -130,10 +130,7 @@ export function EditMeal() {
                 <Text>Não</Text>
               </ChoiceButton>
             </Wrapper>
-            <Button
-              title="Cadastrar refeição"
-              onPress={handleSubmit(onSubmit)}
-            />
+            <Button title="Editar refeição" onPress={handleSubmit(onSubmit)} />
           </Form>
         </ScrollView>
       </Main>
