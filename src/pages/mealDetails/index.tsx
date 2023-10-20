@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { MealDTO } from '../../DTOs/MealDTO'
 import { mealRemove } from '../../storage/mealRemove'
+
 import {
   Container,
   Header,
@@ -33,6 +34,10 @@ export function MealDetails() {
 
   function handleDeleteMeal() {
     setShowModal(true)
+  }
+
+  function handleEditMeal() {
+    navigation.navigate('editMeal', { meal })
   }
 
   function handleCancel() {
@@ -81,6 +86,7 @@ export function MealDetails() {
         <Button
           title="Editar refeição"
           icon={<PencilSimpleLine color={theme.COLORS.GRAY_700} />}
+          onPress={() => handleEditMeal()}
         />
         <Button
           title="Excluir refeição"

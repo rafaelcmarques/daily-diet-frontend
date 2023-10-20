@@ -10,6 +10,9 @@ export declare global {
       mealDetails: {
         meal: MealDTO
       }
+      editMeal: {
+        meal: MealDTO
+      }
       newMeal: undefined
       statistic: undefined
     }
