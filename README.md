@@ -1,26 +1,22 @@
-<h1 align="center"> Ignite Gym </h1>
 
-O Ignite Gym é um aplicativo desenvolvido em React Native que facilita o gerenciamento do histórico de exercícios realizados na academia. Com esta aplicação, você pode escolher seus exercícios, marcá-los como realizados e manter um registro de seu progresso de forma simples e eficaz.
-
-#### Principais recursos
-Seleção de Exercícios: Escolha entre uma variedade de exercícios disponíveis para criar seu plano de treino personalizado.
-
-Marcação de Realização: Registre facilmente os exercícios que você concluiu, mantendo um histórico preciso.
-
-Histórico de Exercícios: Acompanhe seu progresso ao visualizar seu histórico de exercícios, permitindo que você veja seu crescimento e desempenho ao longo do tempo.
-
-## 
-
-- [🖥️ Telas Preview](#%EF%B8%8F-telas-preview) 
-- [▶️ Instalação e Execução](#%EF%B8%8F-instalação-e-execução-localmente)
-- [🚀 Tecnologias](#-tecnologias)
-- [⚙️ API](#-api)
-
-<br>
+![Mockup 03](https://github.com/rafaelcmarques/ignite-gym/assets/55025119/05c2f322-a2df-40ac-8226-218a4186fd2f)
 
 
-## 🖥️ Telas Preview
-![Capa](https://github.com/rafaelcmarques/todo/assets/55025119/dc8c197e-15ea-4f1e-aa11-683eeb61baea)
+## Daily Diet - Registre e Acompanhe Suas Refeições
+
+O **Daily Diet** é um aplicativo desenvolvido em **React Native** que simplifica o registro e acompanhamento de suas refeições diárias. Seja você um entusiasta da alimentação saudável, um atleta ou alguém que deseja controlar sua dieta, este aplicativo é a ferramenta ideal para você.
+
+### Recursos Principais
+
+- **Registro Simples**: Registre suas refeições de forma rápida e fácil. Você pode adicionar detalhes como nome da refeição, horário e se ela se encaixa na sua dieta.
+
+- **Análise Inteligente**: O aplicativo analisa automaticamente as refeições registradas e fornece informações valiosas, incluindo:
+  - A quantidade total de refeições registradas.
+  - A porcentagem de refeições que estão alinhadas com a sua dieta.
+  - A melhor sequência de refeições dentro da dieta para otimizar seus resultados.
+  - O número de refeições dentro e fora da sua dieta.
+
+- **Acompanhamento de Progresso**: Acompanhe o seu progresso ao longo do tempo. Observe como suas escolhas alimentares afetam seus objetivos de dieta e saúde.
 
 
 
@@ -66,26 +62,6 @@ Lembrando que tanto o seu computador quanto o smartphone devem estar conectados 
 
 Com essas etapas, você conseguirá facilmente executar seu projeto utilizando o ExpoGo em seu smartphone. Aproveite para testar e verificar como o aplicativo se comporta em um ambiente móvel!
 
-## ⚙️  API
-Para o desenvolvimento deste projeto, foi utilizada a API abaixo:
-
-- [Ignite gym - API] (https://github.com/rodrigorgtic/ignitegym-api)
-
-Como utilizar a API?
-
-Após o download, você deve acessar a pasta do seu projeto e instalar as dependências com o comando 
-
-```
-npm i
-``` 
-Para executar o projeto, basta executar o comando 
-
-```
-npm run dev
-```
-
-Com isso, a sua API estará pronta para ser consumida no endereço 
-`http://localhost:3333`.
 
 
 ## 🚀 Tecnologias
