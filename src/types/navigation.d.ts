@@ -5,7 +5,7 @@ export declare global {
     interface RootParamList {
       home: undefined
       feedback: {
-        status: string
+        status: MealDTO['status']
       }
       mealDetails: {
         meal: MealDTO

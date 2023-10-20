@@ -28,13 +28,13 @@ export function NewMeal() {
     formState: { errors },
   } = useForm<MealDTO>()
 
-  const [isSelected, setIsSelected] = useState<MealDTO['status']>()
+  const [status, setStatus] = useState<MealDTO['status']>('onDiet')
   const navigation = useNavigation()
 
   async function onSubmit(data: MealDTO) {
-    data.status = isSelected as MealDTO['status']
+    data.status = status as MealDTO['status']
     await mealCreate(data)
-    navigation.navigate('home')
+    navigation.navigate('feedback', { status })
   }
 
   return (
@@ -96,8 +96,8 @@ export function NewMeal() {
             <Wrapper style={{ flex: 1 }}>
               <ChoiceButton
                 types="green"
-                isSelected={isSelected === 'onDiet'}
-                onPress={() => setIsSelected('onDiet')}
+                isSelected={status === 'onDiet'}
+                onPress={() => setStatus('onDiet')}
               >
                 <Status types="green" />
                 <Text>Sim</Text>
@@ -105,8 +105,8 @@ export function NewMeal() {
 
               <ChoiceButton
                 types="red"
-                isSelected={isSelected === 'outDiet'}
-                onPress={() => setIsSelected('outDiet')}
+                isSelected={status === 'outDiet'}
+                onPress={() => setStatus('outDiet')}
               >
                 <Status types="red" />
                 <Text>Não</Text>
