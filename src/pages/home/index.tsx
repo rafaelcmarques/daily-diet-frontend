@@ -3,7 +3,13 @@ import { useState, useCallback } from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 
-import { Container, Text, TextSection } from './styles'
+import {
+  Container,
+  Text,
+  TextSection,
+  EmptyListView,
+  EmptyListMessage,
+} from './styles'
 
 import { PercentageView } from '../../components/PercentageView'
 import { MealItem } from '../../components/MealItem'
@@ -79,6 +85,14 @@ export function Home() {
         )}
         stickySectionHeadersEnabled={false}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => (
+          <EmptyListView>
+            <EmptyListMessage>
+              Nenhuma refeição foi cadastrada ainda. Vamos começar?
+            </EmptyListMessage>
+          </EmptyListView>
+        )}
+        contentContainerStyle={refeicoes.length === 0 && { flex: 1 }}
       />
       <LinearGradient
         colors={['rgba(255, 255, 255, 0)', 'rgb(255, 255, 255)']} // Cores do gradiente
